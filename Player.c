@@ -2,18 +2,18 @@
 
 
 void setPlayer (def *Player){
-    Player->x = 100;
-    Player->y = 300;
+    Player->initate.x = 100;
+    Player->initate.y = 300;
 
     Player->count = 0;
     Player->pulando = 0;
     Player->tecla = 0;
 
-    Player->sprite_player = al_load_bitmap("sprite/mario.bmp");
-    al_convert_mask_to_alpha(Player->sprite_player,al_map_rgb(255,0,255));
+    Player->initate.Sprite = al_load_bitmap("sprite/mario.bmp");
+    al_convert_mask_to_alpha(Player->initate.Sprite,al_map_rgb(255,0,255));
 
-    Player->weight = al_get_bitmap_width(Player->sprite_player);
-    Player->height = al_get_bitmap_height(Player->sprite_player);
+    Player->initate.weight = al_get_bitmap_width(Player->initate.Sprite);
+    Player->initate.height = al_get_bitmap_height(Player->initate.Sprite);
 }
 
 void playerUpdate(def *Player){
@@ -21,14 +21,13 @@ void playerUpdate(def *Player){
     if (Player->tecla == 1){
         Player->turn = 0;
         
-
     }else if (Player->tecla == -1){
         Player->turn = 1;
 
     }
-    Player->x += 5 * Player->tecla;
+    Player->initate.x += GAME_VELOCITY * Player->tecla;
 
-    al_draw_bitmap(Player->sprite_player, Player->x, Player->y,Player->turn);
+    al_draw_bitmap(Player->initate.Sprite, Player->initate.x, Player->initate.y,Player->turn);
     
 }
 

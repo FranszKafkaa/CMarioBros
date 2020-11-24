@@ -4,24 +4,37 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
-typedef struct Player{
-    double x,y;
-    int weight, height, turn;
-    signed short int pulando,count,tecla;
-    
+#define GAME_VELOCITY 10
 
-    ALLEGRO_BITMAP *sprite_player;
+typedef struct GameObjects {
+    double x,y;
+    int weight, height;
+    ALLEGRO_BITMAP *Sprite;
+
+} GameObjects;
+
+typedef struct Player{
+    GameObjects initate;
+    int turn;
+    signed short int pulando,count,tecla;    
 
 } def;
 
+typedef struct Components{
+    GameObjects obj;
+    signed short int Enemy;
+
+} Components;
+
 def Player;
+Components allComponents[100];
 
 
-
+//Player Functions
 void EventPlayer(ALLEGRO_EVENT *evento, def *Player);
 void playerUpdate(def *Player);
 void setPlayer(def *Player);
-
+// End of Player Functions
 
 
 
