@@ -1,0 +1,25 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "__functional_base": "cpp",
+        "__functional_base_03": "cpp",
+        "__hash_table": "cpp",
+        "__tuple": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "compare": "cpp",
+        "type_traits": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "ranges": "cpp"
+    }
+}
