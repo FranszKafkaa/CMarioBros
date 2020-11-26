@@ -1,13 +1,14 @@
 TARGET = main
 
-LDFLAGS := -I/usr/local/include -lallegro -lallegro_main -lallegro_image -lallegro_primitives
+LDFLAGS := -I/usr/local/include -lallegro -lallegro_main \
+-lallegro_image -lallegro_primitives $(shell pkg-config --cflags json-c)
 
 $(TARGET): main.o lib.a
 	gcc $^ -o $@ $(LDFLAGS)
 
 
 main.o: main.c
-	gcc -c $< -o $@
+	gcc -c $< -o $@ 
 
 lib.a: game.o Component.o
 	ar rcs $@ $^

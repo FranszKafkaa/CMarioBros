@@ -26,16 +26,13 @@ typedef struct Components{
 
 } Components;
 
-def Player;
-Components allComponents[100];
-
-
 //Player Functions
 void EventPlayer(ALLEGRO_EVENT *evento, def *Player);
 void playerUpdate(def *Player);
 void setPlayer(def *Player);
 // End of Player Functions
 
-
+void setComponent(Components *Component);
+void updateComponent(Components *Component);
 
 #endif //COMPONENT_H

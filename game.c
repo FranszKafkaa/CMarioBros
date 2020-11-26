@@ -6,6 +6,9 @@ void main_game(){
     ALLEGRO_EVENT_QUEUE *event_queue = NULL;
     ALLEGRO_TIMER *tempo = NULL;
 
+    def Player;
+    Components allComponents[100];
+
     al_init();
     al_init_image_addon();
     al_install_keyboard();
@@ -14,7 +17,7 @@ void main_game(){
 
     al_set_window_title(janela,"Super Mario Bros");
 
-    signed short int done = 0, UPDATE_FLAG = 0;
+    signed short int done = 0;
 
 
     tempo = al_create_timer(1/MAX_FPS);
@@ -42,19 +45,11 @@ void main_game(){
         if(evento.type == ALLEGRO_EVENT_DISPLAY_CLOSE){       
             done ++;
         }
-        
-
-        UPDATE_FLAG = 1;
-
-
-        if(UPDATE_FLAG){
+                
             playerUpdate(&Player);      
 
             al_flip_display();
-            al_clear_to_color(al_map_rgb(107,140,255));
-
-            UPDATE_FLAG = 0;
-        }     
+            al_clear_to_color(al_map_rgb(107,140,255));   
     }
 
     al_destroy_timer(tempo);
